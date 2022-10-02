@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+:root {
+  /* ***Breakpoint Layout*** */
+  --mobile: 375px;
+  --tablet: 768px;
+  --desktop: 1440px;
+
+  /* ***Colors*** */
+  /* Primary */
+  --paleBlue: hsl(225, 100%, 94%);
+  --brightBlue: hsl(245, 75%, 53%);
+
+  /* Neutral */
+  --veryPaleBlue: hsl(225, 100%, 98%);
+  --desaturatedBlue: hsl(224, 23%, 55%);
+  --darkBlue: hsl(223, 47%, 23%);
+  --white: hsl(0, 0%, 100%);
+
+  /* ***Margin/Padding/BorderRadius*** */
+  --margin: 1rem;
+  --padding: 0.5rem;
+  --borderRadius: 0.5rem;
+
+  /* ***Fonts*** */
+  --fontFamily: "Red+Hat+Display", sans-serif;
+  --fontSize: 1rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  font-family: var(--fontFamily);
+  font-size: var(--fontSize);
+  font-weight: 500;
+  color: var(--desaturatedBlue);
+  background-color: var(--paleBlue);
+}
+main,
+.card,
+.card-infos,
+.subscription,
+.package,
+.buttons,
+footer {
+  display: flex;
+}
+main,
+.card-infos,
+footer {
+  justify-content: center;
+}
+main,
+.subscription,
+.buttons,
+footer {
+  align-items: center;
+}
+main,
+.card,
+.card-infos,
+.package,
+.buttons {
+  flex-direction: column;
+}
+main {
+  height: 100vh;
+  background-image: url("/images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.card {
+  width: 410px;
+  height: 660px;
+  background-color: var(--white);
+  border-radius: var(--borderRadius);
+  margin: calc(var(--margin) * 2);
+  box-shadow: 0px 20px 20px hsla(0, 0%, 0%, 0.1);
+}
+.card-img {
+  width: 100%;
+  height: 220px;
+  background-image: url("/images/illustration-hero.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+}
+.card-infos {
+  justify-content: space-between;
+  width: 100%;
+  height: 420px;
+  padding: calc(var(--padding) * 4);
+}
+.card-infos h1,
+.package p:first-child {
+  color: var(--darkBlue);
+}
+.card-infos h1 {
+  font-size: calc(var(--fontSize) * 2);
+  font-weight: 900;
+  align-self: center;
+}
+.card-infos > p {
+  text-align: center;
+  line-height: 1.6rem;
+}
+
+.subscription {
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  background-color: var(--veryPaleBlue);
+  border-radius: var(--borderRadius);
+  padding: calc(var(--padding) * 2);
+}
+.subscription img {
+  margin-right: var(--margin);
+}
+.package {
+  justify-content: space-evenly;
+  flex: 1;
+  height: 100%;
+}
+.package p:first-child,
+.subscription a {
+  font-weight: 700;
+}
+.subscription a {
+  color: var(--brightBlue);
+  text-decoration: underline;
+}
+.subscription a:hover {
+  text-decoration: none;
+}
+.buttons {
+  justify-content: space-between;
+  height: 5.2rem;
+}
+.btn-pay,
+.btn-cancel {
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  transition: color 0.1s ease;
+}
+.btn-pay {
+  width: 100%;
+  height: 40px;
+  border-radius: var(--borderRadius);
+  background-color: var(--brightBlue);
+  color: var(--white);
+  box-shadow: 0px 20px 20px hsla(0, 0%, 0%, 0.1);
+}
+.btn-pay:hover {
+  background-color: var(--desaturatedBlue);
+}
+.btn-cancel {
+  border: none;
+  background-color: transparent;
+  color: var(--desaturatedBlue);
+}
+.btn-cancel:hover {
+  color: var(--darkBlue);
+}
+
+/* ***Responsive*** */
+/* mobile */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 322px;
+    min-width: 322px;
+  }
+  .card-infos {
+    padding: calc(var(--padding) * 3);
+  }
+  .card-infos h1 {
+    font-size: calc(var(--fontSize) * 1.5);
+  }
+  .card-infos > p {
+    font-size: calc(var(--fontSize) * 1.05);
+  }
+  .package p:first-child,
+  .package p:last-child,
+  .subscription a {
+    font-size: calc(var(--fontSize) * 0.9);
+  }
+  footer {
+    padding: 0 calc(var(--padding) * 6);
+    line-height: 1.3rem;
+  }
+}
+
+/* ***Footer*** */
+footer {
+  height: 10vh;
+  text-align: center;
+}
+footer a {
+  color: var(--darkBlue);
+}
+footer a:hover {
+  color: var(--desaturatedBlue);
+}
